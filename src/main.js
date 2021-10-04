@@ -26,16 +26,13 @@ Vue.config.productionTip = false;
 Vue.config.ignoredElements = ["field","block","category","xml","mutation","value","sep"];
 
 import blocklyLocaleEN from "blockly/msg/en";
-import blocklyLocaleFR from "blockly/msg/fr";
 import blocklyLocalePT from "blockly/msg/pt";
 
 import customLocaleEN from './locales/en';
-import customLocaleFR from './locales/fr';
 import customLocalePT from './locales/pt';
 
 const messages = {
     en: customLocaleEN.websiteMessages,
-    fr: customLocaleFR.websiteMessages,
     pt: customLocalePT.websiteMessages
 };
 
@@ -58,7 +55,6 @@ Vue.mixin({
             workspace.dispose();
             // Create a new workspace (with the good language)
             const newWorkspace = Blockly.inject(document.getElementById("blocklyDiv"), {
-                renderer: "zelos",
                 theme: Theme,
                 grid: {
                     spacing: 25,
@@ -95,14 +91,6 @@ Vue.mixin({
                     // Change website languages (navbar, etc...)
                     this.$root.$i18n.locale = "en";
                     break;
-                case "fr":
-                    // Change Blockly language for default blocks
-                    Blockly.setLocale(blocklyLocaleFR);
-                    // Change Blockly language for custom blocks
-                    customLocaleFR.applyBlocklyLocale();
-                    // Change website languages (navbar, etc...)
-                    this.$root.$i18n.locale = "fr";
-                    break;
                 case "pt":
                     // Change Blockly language for default blocks
                     Blockly.setLocale(blocklyLocalePT);
@@ -118,33 +106,9 @@ Vue.mixin({
         getWorkspaceCode(){
             if(!this.$store.state.workspace) return "";
             return `
-                (async()=>{
-                const Discord = require("discord.js");
-                const Database = require("easy-json-database");
-                const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
-                const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-                const s4d = {
-                    Discord,
-                    database: new Database(\`\${devMode ? S4D_NATIVE_GET_PATH : "."}/db.json\`),
-                    joiningMember:null,
-                    reply:null,
-                    tokenInvalid:false,
-                    tokenError: null,
-                    checkMessageExists() {
-                        if (!s4d.client) throw new Error('You cannot perform message operations without a Discord.js client')
-                        if (!s4d.client.readyTimestamp) throw new Error('You cannot perform message operations while the bot is not connected to the Discord API')
-                    }
-                };
-                s4d.client = new s4d.Discord.Client({
-                    intents: [Object.values(s4d.Discord.Intents.FLAGS).reduce((acc, p) => acc | p, 0)],
-                    partials: ["REACTION"]
-                });
-
-                ${Blockly.JavaScript.workspaceToCode(this.$store.state.workspace)}
-
-                return s4d;
-                })();
-            `;
+<!DOCTYPE html>
+${Blockly.JavaScript.workspaceToCode(this.$store.state.workspace)}
+`;
         }
     }
 });

@@ -1,9 +1,9 @@
 import * as Blockly from "blockly";
 
-const blockName = "s4d_on_react_removed";
+const blockName = "s4h_head_tag";
 
 const blockData = {
-    "message0": "%{BKY_ON_REACT_REMOVED} %1 %2",
+    "message0": "header %1 %2",
     "colour": "#F5AB1A",
     "args0": [
         {
@@ -13,7 +13,9 @@ const blockData = {
             "type": "input_statement",
             "name": "STATEMENTS"
         }
-    ]
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
 };
 
 Blockly.Blocks[blockName] = {
@@ -24,6 +26,6 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-    const code = `s4d.client.on('MESSAGE_REACTION_REMOVED', async (rGuild, rChannel, rMessage, rMember, rEmoji) => {\n${statements}\n});\n`;
+    const code = `<head>\n${statements}\n</head>\n`;
     return code;
 };

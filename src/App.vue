@@ -1,4 +1,5 @@
 <template>
+
     <div id="app">
         <NavBarComponent id="navSpace"></NavBarComponent>
         <BlocklyComponent id="blocklySpace" :options="options"></BlocklyComponent>
@@ -16,21 +17,7 @@ Blockly.Tooltip.HOVER_MS = 100;
 
 // Load blocks
 
-import "./blocks/discord/base/";
-import "./blocks/discord/message-event/";
-import "./blocks/discord/join-event/";
-import "./blocks/discord/leave-event/";
-import "./blocks/discord/reaction-event/";
-
-import "./blocks/discord/channels/";
-import "./blocks/discord/servers/";
-import "./blocks/discord/roles/";
-import "./blocks/discord/members/";
-
-import "./blocks/database/";
-import "./blocks/text/";
-import "./blocks/loops/";
-import "./blocks/other/";
+import "./blocks/html/";
 import "./prompt";
 
 import Theme from '@blockly/theme-modern';
@@ -68,11 +55,10 @@ export default {
     data() {
         return {
             options: {
-                renderer: "zelos",
                 theme: Theme,
                 zoom: {
                     controls: true,
-                    startScale: 0.9,
+                    startScale: 1.2,
                     maxScale: 3,
                     minScale: 0.3,
                     scaleSpeed: 1.2

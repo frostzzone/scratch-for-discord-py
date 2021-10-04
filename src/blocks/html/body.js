@@ -1,9 +1,9 @@
-import * as Blockly from "blockly/core";
+import * as Blockly from "blockly";
 
-const blockName = "s4d_on_member_leave";
+const blockName = "s4h_body_tag";
 
 const blockData = {
-    "message0": "%{BKY_ON_MEMBER_LEAVE} %1 %2",
+    "message0": "content %1 %2",
     "colour": "#F5AB1A",
     "args0": [
         {
@@ -13,7 +13,9 @@ const blockData = {
             "type": "input_statement",
             "name": "STATEMENTS"
         }
-    ]
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
 };
 
 Blockly.Blocks[blockName] = {
@@ -24,6 +26,6 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-    const code = `s4d.client.on('guildMemberRemove', async (param1) => {\ns4d.leavingMember = param1;\n${statements}s4d.leavingMember = null\n});\n`;
+    const code = `<body>\n${statements}\n</body>\n`;
     return code;
 };

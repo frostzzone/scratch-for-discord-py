@@ -2,7 +2,7 @@
     <b-navbar toggleable="lg" type="dark" style="background-color:#161719;user-select:none;" id="navbar nav-main">
         <b-navbar-brand>
             <img src="scratch.png" width="40" draggable="false">
-            Scratch For Discord
+            Scratch For Html
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -17,14 +17,10 @@
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
-                <RunModal></RunModal>
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
                 <span contenteditable="true" id="docName">{{ $t("untitled") }}</span>
                 </b-button>
-                <b-button id="v-step-1" :disabled="!configurationValidated" style="border-right-color: #161719; border-radius: 0em;" v-b-modal.run-modal>
-                    <b-icon-play></b-icon-play>
-                </b-button>
-                <b-button id="v-step-2" :disabled="!configurationValidated" style="border-radius: 0em; border-top-right-radius: 0.25em; border-bottom-right-radius: 0.25em" @click="exportToCode">
+                <b-button id="v-step-2"  style="border-radius: 0em; border-top-right-radius: 0.25em; border-bottom-right-radius: 0.25em" @click="exportToCode">
                     <b-icon-download></b-icon-download>
                 </b-button>
             </b-navbar-nav>
@@ -39,7 +35,6 @@ import JSZip from "jszip";
 import FileMenu from "./FileMenu.vue";
 import EditMenu from "./EditMenu.vue";
 import LanguageMenu from "./LanguageMenu.vue";
-import RunModal from "./RunModal.vue";
 import ExamplesMenu from "./ExamplesMenu.vue";
 import CodeModal from "./CodeModal";
 
@@ -49,7 +44,6 @@ export default {
         FileMenu,
         EditMenu,
         LanguageMenu,
-        RunModal,
         ExamplesMenu,
         CodeModal
     },
@@ -62,7 +56,7 @@ export default {
     },
     mounted(){
         document.getElementById("docName").addEventListener("input", function() {
-            document.title = `Scratch For Discord - ${document.querySelector("#docName").textContent}`;
+            document.title = `Scratch For Html - ${document.querySelector("#docName").textContent}`;
         }, false);
         const element = document.querySelector("#docName");
         element.spellcheck = false;
@@ -87,20 +81,7 @@ export default {
                     const fileName = `${encodeURIComponent(document.querySelector("#docName").textContent).replace(/%20/g, " ")}.zip`;
                     zip.file("blocks.xml", xmlContent);
                     const javascriptContent = this.getWorkspaceCode();
-                    zip.file("bot.js", javascriptContent);
-                    zip.file(".replit", 'run = "node bot.js"');
-                    zip.file("package.json", JSON.stringify({
-                        name: 'scratch-for-discord-bot',
-                        version: '1.0.0',
-                        main: 'bot.js',
-                        scripts: {
-                            start: 'node .'
-                        },
-                        dependencies: {
-                            'discord.js': '^13.1.0',
-                            'easy-json-database': '^1.5.0'
-                        }
-                    }));
+                    zip.file("html.html", javascriptContent);
                     zip.generateAsync({
                         type: "blob"
                     })

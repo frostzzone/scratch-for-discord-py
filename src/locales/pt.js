@@ -12,11 +12,11 @@ export const websiteMessages = {
     untitled: "Documento sem nome",
     help: "Ajuda",
     load: {
-        error: "O arquivo enviado está corrompido e não pode ser carregado pelo Scratch For Discord..."
+        error: "O arquivo enviado está corrompido e não pode ser carregado pelo Scratch For Html..."
     },
     file: {
         title: "Arquivo",
-        javascript: "Exporta para javascirpt",
+        html: "Exporta para Html",
         open: "abrir arquivo...",
         save: "Salva"
     },
@@ -46,13 +46,13 @@ export const websiteMessages = {
         leveling: "XP e sistema de níveis"
     },
     download: {
-        title: "Instale o seu bot",
+        title: "Instale o seu website",
         content: {
-            title: "Como iniciar o seu bot depois de baixado?",
+            title: "Como iniciar o seu website depois de baixado?",
             unzipFile: "Descompacte o arquivo baixado.",
-            node: "Instale o NPM e o Node.js (pesquise tutoriais no Google)",
-            start: "Execute 'npm install' e 'npm start' em um terminal",
-            done: "Seu bot foi iniciado!"
+            node: "Vai no replit e crie um novo projeto com o template html",
+            start: "coloca o seu html.html no index.html",
+            done: "Seu website foi iniciado!"
         },
         cancel: "Cancela",
         confirm: "Instala"
@@ -63,25 +63,25 @@ export const websiteMessages = {
         next: "Próximo",
         finish: "Termina",
         steps: {
-            load_examples: "Importe exemplos para descobrir Scratch4Discord!",
-            run_test: "Teste as funcionalidades do seu bot aqui!",
+            load_examples: "Importe exemplos para descobrir Scratch4Html!",
+            run_test: "Teste as funcionalidades do seu website aqui!",
             export_code: "Exporte seu código aqui!"
         }
     },
     warnings: {
-        login_block: "O bloco \"Conectar ao Discord\" na categoria \"Base\" é obrigatório."
+        login_block: "O bloco \"Conectar ao Html\" na categoria \"Base\" é obrigatório."
     },
     run_modal: {
         title: "Clique em Iniciar para testar seu bot!",
-        start: "Inicie o bot",
-        stop: "Pare o bot",
-        invalid_token: "Unable to connect to Discord... Maybe the bot's token isn't valid!",
-        error: "Incapaz de conectar ao Discord ... Talvez o token do bot não seja válido!",
-        disabled: "⚠️ Este recurso está disponível apenas usando o aplicativo Scratch For Discord (pegue ele {here})",
+        start: "Inicie o website",
+        stop: "Pare o website",
+        invalid_token: "não foi posivvel carrega o seu website... talvez ele tenha algum error?",
+        error: "não foi posivvel carrega o seu website... talvez ele tenha algum error?",
+        disabled: "⚠️ Este recurso está disponível apenas usando o aplicativo Scratch For Html (pegue ele {here})",
         here: "aqui"
     },
     code_modal: {
-        title: "Código JavaScript do seu bot"
+        title: "Código Html do seu website"
     }
 };
 

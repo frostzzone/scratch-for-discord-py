@@ -12,11 +12,11 @@ export const websiteMessages = {
     untitled: "Untitled document",
     help: "Help",
     load: {
-        error: "The uploaded file is corrupted and cannot be loaded by Scratch For Discord..."
+        error: "The uploaded file is corrupted and cannot be loaded by Scratch For Html..."
     },
     file: {
         title: "File",
-        javascript: "Export to Javascript",
+        html: "Export to Html",
         open: "Open a file...",
         save: "Save"
     },
@@ -46,13 +46,13 @@ export const websiteMessages = {
         leveling: "XP and levels system"
     },
     download: {
-        title: "Download your bot",
+        title: "Download your website",
         content: {
-            title: "How to start your bot once downloaded?",
+            title: "How to start your Website once downloaded?",
             unzipFile: "Unzip the downloaded file.",
-            node: "Install NPM and Node.js (search for tutorials on Google)",
-            start: "Run 'npm install' and 'npm start' in a terminal",
-            done: "Your bot is started!"
+            node: "go to replit and create a html template",
+            start: "add your html file to the index.html",
+            done: "Your website is started!"
         },
         cancel: "Cancel",
         confirm: "Download"
@@ -63,25 +63,22 @@ export const websiteMessages = {
         next: "Next",
         finish: "Finish",
         steps: {
-            load_examples: "Import examples to discover Scratch4Discord!",
+            load_examples: "Import examples to discover Scratch4Html!",
             run_test: "Test the functionalities of your bot here!",
             export_code: "Export your code here!"
         }
     },
-    warnings: {
-        login_block: "The \"Connect to Discord\" block in the \"Base\" category is mandatory."
-    },
     run_modal: {
-        title: "Click Start to test your bot!",
-        start: "Start the bot",
-        stop: "Stop the bot",
-        invalid_token: "Unable to connect to Discord... Maybe the bot's token isn't valid!",
-        error: "Unable to connect to Discord... Try again later!",
-        disabled: "⚠️ This feature is only available using the Scratch For Discord App (get it {here})",
+        title: "Click Start to test your website!",
+        start: "Start the website",
+        stop: "Stop the website",
+        invalid_token: "Unable to connect to Html... Maybe the website has a error?!",
+        error: "Unable to connect to Html... Try again later!",
+        disabled: "⚠️ This feature is only available using the Scratch For Html App (get it {here})",
         here: "here"
     },
     code_modal: {
-        title: "JavaScript code of your bot"
+        title: "Html code of your website"
     }
 };
 

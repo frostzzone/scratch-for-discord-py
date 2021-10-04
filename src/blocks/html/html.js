@@ -1,9 +1,9 @@
-import Blockly from "blockly/core";
+import * as Blockly from "blockly";
 
-const blockName = "s4d_on_connected";
+const blockName = "s4h_html_tag";
 
 const blockData = {
-    "message0": "%{BKY_ON_CONNECTED} %1 %2",
+    "message0": "document %1 %2",
     "colour": "#F5AB1A",
     "args0": [
         {
@@ -13,8 +13,7 @@ const blockData = {
             "type": "input_statement",
             "name": "STATEMENTS"
         }
-    ],
-    "tooltip": "%{BKY_ON_CONNECTED_TOOLTIP}"
+    ]
 };
 
 Blockly.Blocks[blockName] = {
@@ -25,6 +24,6 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-    const code = `s4d.client.on('ready', async () => {\n${statements}\n});\n`;
+    const code = `<html>\n${statements}\n</html>\n`;
     return code;
 };
