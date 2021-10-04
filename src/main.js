@@ -45,6 +45,7 @@ import toolbox from "./toolbox";
 import Theme from '@blockly/theme-modern';
 
 Vue.mixin({
+
     methods: {
         reloadWorkspace(){
             // Get current workspace

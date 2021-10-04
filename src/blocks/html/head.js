@@ -26,6 +26,6 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-    const code = `<head>\n${statements}\n</head>\n`;
+    const code = `<head>\n<meta charset="utf-8">\n${statements}\n</head>\n`;
     return code;
 };

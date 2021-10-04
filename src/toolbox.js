@@ -9,6 +9,10 @@ export default (Blockly) => {
             <block type="s4h_body_tag"/>
             <block type="s4h_title_tag"/>
         </category>
+        <category name="text" colour="#5b80a5">
+            <block type="s4h_text"/>
+            <block type="s4d_newline"/>
+        </category>
         <sep/>
         <category name="JAVASCRIPT"/>
         <sep/>

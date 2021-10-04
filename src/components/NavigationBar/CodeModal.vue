@@ -11,7 +11,7 @@ export default {
     name: "editmenu",
     computed: {
         content: function(){
-            return this.getWorkspaceCode()
+            return this.getWorkspaceCode()        
         }
     }
 }
