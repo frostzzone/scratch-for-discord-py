@@ -476,6 +476,16 @@ export default (Blockly, value) => {
 					  <block type="ps_cpu_stats"/>
 					    <block type="ps_os_stats"/>
 					    </category>
+					    
+<category name="Mxson" colour="#7289DA">
+	<category name="Nickname" colour="#63FFD2">
+  <label text="Nickname Events" web-class="boldtext"></label>
+	 				<block type="s4d_on_nickname_changed"/>
+					</category>
+					
+  <label text="Nickname Blocks" web-class="boldtext"></label>
+					</category>
+					    
 <category name="Ticketing System" colour="#5b80a5">
 	<label text="You can also type local" web-class="boldtext"></label>
 		<block type="ticket_connect"/>
