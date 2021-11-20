@@ -32,25 +32,7 @@ const blockData = {
             ]
           
         ],
-        },        ],
         },
-
-    ],
-    "colour": "#5ba58b",
-    "output": "String",
-    "tooltip": "",
-    "helpUrl": ""
-};
-
-Blockly.Blocks[blockName] = {
-    init: function() {
-        this.jsonInit(blockData);
-    }
-};
-
-Blockly.JavaScript[blockName] = function(block) {
-  const stats = block.getFieldValue("INFO");
-
 
     ],
     "colour": "#5ba58b",
