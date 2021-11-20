@@ -1,7 +1,6 @@
 //line 455 add < at start and > at end
 export default (Blockly, value) => {
   return (`
-    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
         
 	
 	<category name="{{ TOOLBOX_LOGIC }}" colour="#5b80a5">
@@ -477,13 +476,10 @@ export default (Blockly, value) => {
 					    <block type="ps_os_stats"/>
 					    </category>
 					    
-<category name="Mxson" colour="#7289DA">
+<category name="mxson" colour="#7289DA">
 	<category name="Nickname" colour="#63FFD2">
   <label text="Nickname Events" web-class="boldtext"></label>
 	 				<block type="s4d_on_nickname_changed"/>
-					</category>
-					
-  <label text="Nickname Blocks" web-class="boldtext"></label>
 					</category>
 					    
 <category name="Ticketing System" colour="#5b80a5">
