@@ -113,6 +113,7 @@ import "./blocks/Lyric_finder/"
 import "./blocks/frostzzone/useless/"
 import "./blocks/frostzzone/scratch/"
 import "./blocks/frostzzone/github/"
+import "./blocks/mxson/nickname";
 
 import Theme from '@blockly/theme-modern';
 
