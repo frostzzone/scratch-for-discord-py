@@ -1,0 +1,6 @@
+import "./ran_red_post"
+import "./postImage"
+import "./postUrl"
+import "./postTitle"
+import "./get_about"
+import "./get_about_then"
