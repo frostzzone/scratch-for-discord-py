@@ -205,8 +205,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+</style>
+
+<style>
 #app {
-        font-family: "Oswald", sans-serif;
+        font-family: "Comfortaa", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
