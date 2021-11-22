@@ -491,6 +491,13 @@ export default (Blockly, value) => {
 		<block type="lyric"/>
 	</category>
 </category>
+
+<category name="mxson" colour="#7289DA">
+	<category name="Nickname" colour="#63FFD2">
+  		<label text="Nickname Events" web-class="boldtext"></label>
+	 		<block type="s4d_on_nickname_changed"/>
+	</category>
+</category>
 				
                 <sep class="bt"/>
                     <category name="favorite" colour="#FFFF00" css-icon="customIcon fa fa-star">
