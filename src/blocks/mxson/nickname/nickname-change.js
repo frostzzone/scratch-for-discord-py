@@ -3,7 +3,7 @@ import * as Blockly from "blockly";
 const blockName = "s4d_on_nickname_changed";
 
 const blockData = {
-    "message0": "When a user's nickname has been changed",
+    "message0 %1 %2": "When a user's nickname has been changed",
     "colour": "#1AB6F5",
     "args0": [
         {
