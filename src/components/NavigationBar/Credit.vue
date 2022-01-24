@@ -12,8 +12,8 @@ export default {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Androz, snowflake107 - original s4d\n7coil - Discord blocks\nJose and mrredo - Preview 454',
-                text: 'frostzzone, RetroBTW, XL83, AHQ, henpokpok, AlexCdDg, Eruption - Preview 469',
+                title: 'Androz, snowflake107 - original s4d\n7coil - Discord blocks',
+                text: 'Scratch for discord PY is maintained by frostzzone',
                 showConfirmButton: true
             })
         },
