@@ -1,2 +1,0 @@
-import "./createFile"
-import "./fileContents"

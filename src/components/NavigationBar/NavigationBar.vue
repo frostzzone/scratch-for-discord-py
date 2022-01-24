@@ -2,7 +2,7 @@
     <b-navbar toggleable="lg" type="dark" style="background-color:#161719;user-select:none;" id="navbar nav-main">
         <b-navbar-brand>
             <img src="scratch.png" width="40" draggable="false">
-            Scratch For Discord
+            Scratch For Discord - PY
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -17,7 +17,6 @@
                 <ExamplesMenu></ExamplesMenu>
                 <preBuilds></preBuilds>
                 <TokenModal></TokenModal>
-                <Socials></Socials>
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t('help') }}</b-nav-item>
                 <Credit></Credit>
             </b-navbar-nav>
@@ -44,7 +43,6 @@ import ExamplesMenu from "./ExamplesMenu.vue";
 import CodeModal from "./CodeModal.vue";
 import preBuilds from "./preBuilds.vue";
 import ToolboxModal from "./ToolboxModal.vue";
-import Socials from "./socials.vue";
 import Credit from "./Credit";
 import localforage from 'localforage';
 import r from "./requires"
@@ -59,8 +57,7 @@ export default {
         TokenModal,
         preBuilds,
         ToolboxModal,
-        Credit,
-        Socials
+        Credit
     },
     computed: {
         configurationValidated: function () {
