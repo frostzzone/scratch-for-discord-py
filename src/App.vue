@@ -18,7 +18,7 @@ import BlocklyComponent from "./components/BlocklyComponent.vue";
 Blockly.Tooltip.HOVER_MS = 100;
 
 // Load blocks
-
+import "./blocks/folders.js"
 
 import Theme from '@blockly/theme-modern';
 
