@@ -3,7 +3,9 @@ export default (Blockly) => {
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
 
 <category name="{{ TOOLBOX_LOGIC }}" colour="#5b80a5">
-            <block type="controls_if" />
+            <block type="if_py"/>
+            <block type="if_else_py"/>
+            
             <block type="logic_compare">
                 <field name="OP">EQ</field>
             </block>
@@ -33,6 +35,7 @@ export default (Blockly) => {
 <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#41AAC0">
 <block type="s4d_on_message"/>
 <block type="s4d_message_content"/>
+<block type="s4d_send"/>
 <block type="s4d_reply"/>
 </category>
 </xml>

@@ -1,21 +1,16 @@
 import * as Blockly from "blockly/core";
 import { registerRestrictions } from "../../../restrictions";
 
-const blockName = "s4d_reply";
+const blockName = "s4d_send";
 
 const blockData = {
-    "message0": "Send reply %1 mention %2",
+    "message0": "Send %1",
     "args0": [
         {
             "type": "input_value",
             "name": "CONTENT",
-            "check": [ "Number", "String", "MessageEmbed","embed" ]
+            "check": [ "Number", "String", "MessageEmbed","embed", "var"]
         },
-        {
-          "type": "input_value",
-          "name": "boolean",
-          "check": "Boolean"
-        }
     ],
     "colour": "#4C97FF",
     "previousStatement": null,
@@ -32,28 +27,25 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block){
     const content = Blockly.JavaScript.valueToCode(block, "CONTENT", Blockly.JavaScript.ORDER_ATOMIC);
-    const boolean = Blockly.JavaScript.valueToCode(block, "boolean", Blockly.JavaScript.ORDER_ATOMIC);
     if(block.getInput("CONTENT").connection.targetConnection){
         const contentType = block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_ ?
         block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_[0] :
         null;
-        if((contentType === "MessageEmbed") || (!contentType && typeof contentType === "object")){
-          if(contentType === "MessageEmbed"){
-            const code = `s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+        if ((contentType === "var")) {
+            const code = `s4dmessage.channel.send(${content})\n`;
             return code;
-          }else{
-            const code = `s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
-            return code;
-          }
         }else if((contentType === "embed") || (!contentType && typeof contentType === "object")){
-            const code = `s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `s4dmessage.channel.send(${content})\n`;
+            return code;
+        } else if((contentType === "MessageEmbed") || (!contentType && typeof contentType === "object")){
+            const code = `s4dmessage.channel.send(${content})\n`;
             return code;
         } else {
-            const code = `s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+            const code = `s4dmessage.channel.send(${content})\n`;
             return code;
         }
     } else {
-        const code = `s4dmessage.reply(${content}, mention_author = ${boolean})\n`;
+        const code = `s4dmessage.channel.send(${content})\n`;
         return code;
     }
 };

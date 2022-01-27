@@ -26,7 +26,7 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
-    const code = `@client.event
-async def on_message(message):\n${statements}\n});\n`;
+    const code = `@s4dbot.event
+async def on_message(s4dmessage):\n${statements}\n`;
     return code;
 };
