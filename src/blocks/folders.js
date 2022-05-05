@@ -2,4 +2,6 @@
 import "./discord/base"
 import "./discord/messages"
 
-import "./logic"
+import "./text"
+import "./list"
+import "./color"

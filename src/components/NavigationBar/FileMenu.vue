@@ -11,17 +11,15 @@
 <script>
 import Blockly from "blockly";
 import JSZip from "jszip";
-import beautify from "js-beautify";
+//import beautify from "js-beautify";
 
 export default {
     name: "filemenu",
     methods: {
         copy() {
-            var url = beautify.js(this.getWorkspaceCode(), {
-                indent_size: 4,
-                space_in_empty_paren: true
-            });
+            var url = this.getWorkspaceCode();
            navigator.clipboard.writeText(url)
+          alert(url);
         },
         viewCode() {
 			alert(this.getWorkspaceCode());

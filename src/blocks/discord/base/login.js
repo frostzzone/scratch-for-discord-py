@@ -31,12 +31,11 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block) {
-    const value = Blockly.JavaScript.valueToCode(block, "TOKEN", Blockly.JavaScript.ORDER_ATOMIC);
-    const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
+Blockly.Python[blockName] = function(block) {
+    const value = Blockly.Python.valueToCode(block, "TOKEN", Blockly.Python.ORDER_ATOMIC);
+    const statements = Blockly.Python.statementToCode(block, "STATEMENTS");
     const code = `s4dbot = commands.Bot
-    
-    ${statements}
-    s4dbot.run(${value})\n`;
+${statements}
+s4dbot.run(${value})\n`;
     return code;
 };

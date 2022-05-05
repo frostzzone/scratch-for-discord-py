@@ -16,7 +16,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function() {
-    const code = ["s4dmessage.content", Blockly.JavaScript.ORDER_NONE];
+Blockly.Python[blockName] = function() {
+    const code = ["s4dmessage.content", Blockly.Python.ORDER_NONE];
     return code;
 };

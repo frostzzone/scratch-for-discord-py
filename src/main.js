@@ -1,5 +1,8 @@
 import Vue from 'vue';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import {
+    BootstrapVue,
+    IconsPlugin
+} from 'bootstrap-vue';
 import App from './App.vue';
 import store from './store';
 import VueSwal from 'vue-swal';
@@ -7,7 +10,9 @@ import Vuei18n from 'vue-i18n';
 import Blockly from "blockly";
 import VueToast from 'vue-toast-notification';
 import VueTour from 'vue-tour';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {
+    FontAwesomeIcon
+} from '@fortawesome/vue-fontawesome'
 import savenload from './save-load';
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -20,7 +25,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 Vue.config.productionTip = false;
-Vue.config.ignoredElements = ["field","block","category","xml","mutation","value","sep"];
+Vue.config.ignoredElements = ["field", "block", "category", "xml", "mutation", "value", "sep"];
 
 import r from "./require";
 
@@ -47,7 +52,7 @@ import toolbox from "./toolbox";
 import Theme from '@blockly/theme-dark';
 Vue.mixin({
     methods: {
-        async reloadWorkspace(){
+        async reloadWorkspace() {
             let val = await localforage.getItem("fav") === null ? null : await localforage.getItem("fav")
             // Get current workspace
             let workspace = this.$store.state.workspace;
@@ -71,27 +76,27 @@ Vue.mixin({
                     minScale: 0.3,
                     scaleSpeed: 1.2
                 },
-            move:{
-        scrollbars: {
-          horizontal: true,
-          vertical: true
-        },
-        drag: true,
-        wheel: true},
-                toolbox: toolbox(Blockly,val)
+                move: {
+                    scrollbars: {
+                        horizontal: true,
+                        vertical: true
+                    },
+                    drag: true,
+                    wheel: true
+                },
+                toolbox: toolbox(Blockly, val)
             });
-   
+
             Blockly.Xml.domToWorkspace(dom, newWorkspace);
             // Update the workspace in the vuex store
             this.$store.commit("setWorkspace", {
                 workspace: newWorkspace
-            })
-;				
+            });
 
             // Return the workspace
             return workspace;
         },
-        setLanguage(locale){
+        setLanguage(locale) {
             switch (locale) {
                 case "en":
                     // Change Blockly language for default blocks
@@ -121,26 +126,22 @@ Vue.mixin({
                     break;
             }
         },
-        getWorkspaceCode(){
-            if(!this.$store.state.workspace) return "";
+        getWorkspaceCode() {
+            if (!this.$store.state.workspace) return "";
             let requires = [
-            `import os`,
-            `import disnake`
+                `import os`,
+                `import disnake`
             ]
             let requires2 = [
-              `\n#add a space before "import"
-              from disnake.extimport commands`
+                `from disnake.ext import commands`
             ]
-            r(requires,requires2,Blockly.JavaScript.workspaceToCode(this.$store.state.workspace))
-            setTimeout(async()=>{
-                await localforage.setItem("requires",requires)
-            },1000)
-            return `
-                  ${requires.join("\n")}
-                  ${requires2.join(" ")}
-
-                  ${Blockly.JavaScript.workspaceToCode(this.$store.state.workspace)}
-                    `;
+            r(requires, requires2, Blockly.Python.workspaceToCode(this.$store.state.workspace))
+            setTimeout(async () => {
+                await localforage.setItem("requires", requires)
+            }, 1000)
+            return `${requires.join("\n")}
+${requires2.join("\n")}\n
+${Blockly.Python.workspaceToCode(this.$store.state.workspace)}`;
         }
     }
 });
